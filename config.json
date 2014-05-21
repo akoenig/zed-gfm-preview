@@ -1,0 +1,7 @@
+{
+    "commands": {
+        "GitHub:Markdown:Preview": {
+            "scriptUrl": "./index.js"
+        }
+    }
+}
