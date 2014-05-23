@@ -35,9 +35,7 @@ You can also trigger the rendering manually:
 
 ## Changelog
 
-### Version 1.0.0 (20140521)
-
-- Initial Release. Core functionality.
+See the [HISTORY.md](https://github.com/akoenig/zed-gfm-preview/blob/master/HISTORY.md) file for further information.
 
 ## Author
 
