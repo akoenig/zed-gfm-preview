@@ -17,6 +17,7 @@ var ui = require('zed/ui');
 var http = require('zed/http');
 var preview = require('zed/preview');
 var session = require('zed/session');
+var config = require('zed/config');
 
 /**
  * GitHub Markdown Preview.
@@ -26,6 +27,25 @@ module.exports = function (info) {
 
     var api = 'https://api.github.com/markdown/raw';
     var stylesheet = 'https://raw.githubusercontent.com/sindresorhus/github-markdown-css/gh-pages/github-markdown.css';
+
+    Promise.all([
+        config.getPreference('githubToken'),
+        session.getText(info.path)
+    ])
+    .then(function onInit (vals) {
+        var token = vals[0];
+        var content = vals[1];
+
+        return http.post(api, {
+            data: content,
+            headers: {'Content-Type': 'text/plain'}
+        });
+    })
+    .then(function onResponse (data) {
+        console.log('response');
+        console.log(data[2]['X-RateLimit-Remaining']);
+    });
+    
     
     /**
      * Creates the HTML template with the embedded styles.
@@ -58,11 +78,8 @@ module.exports = function (info) {
      * @param {String} content The content of the current file.
      *
      */
-    function onText (content) {
-        http.post(api, {
-            data: content,
-            headers: {'Content-Type': 'text/plain'}
-        }).then(
+    /*function onText (content) {
+        .then(
             function onResponse (data) {
                 var html = template(data);
         
@@ -72,8 +89,8 @@ module.exports = function (info) {
                 ui.prompt('Autsch! GitHub says: ' + code);
             }
         );
-    }
+    }*/
 
     // Fetch the content from the current editor.
-    session.getText(info.path).then(onText);
+    //session.getText(info.path).then(onText);
 };
