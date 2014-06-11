@@ -1,4 +1,4 @@
-# UNRELEASED
+# 1.2.0 (2014-06-11)
 
   * Functionality for embedding the selectors from the [GitHub CSS file](https://raw.githubusercontent.com/akoenig/github-markdown-css/gh-pages/github-markdown.css).
 
