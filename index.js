@@ -31,12 +31,14 @@ module.exports = function (info) {
 
     Promise.all([
         session.getText(info.path),
-        config.getPreference('githubToken')
+        config.getPreference('githubToken'),
+        template.create()
     ])
     .then(
         function onInit (values) {
             var content = values[0];
             var token = values[1];
+            var tpl = values[2];
 
             github.markdown(content, token).then(
                 function onResponse (data) {
@@ -45,7 +47,7 @@ module.exports = function (info) {
                         ui.prompt('You\'re about to hit GitHub\'s quota limit (' + data.quota + ' request(s) left).');
                     }
         
-                    data.html = template.render(data.html);
+                    data.html = tpl.render(data.html);
         
                     preview.showPreview(data.html);
                 },
