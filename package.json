@@ -1,7 +1,9 @@
 {
   "name": "zed-gfm-preview",
   "uri": "gh:akoenig/zed-gfm-preview",
-  "version": [],
+  "version": [
+    "1.1.0"
+  ],
   "author": {
     "name": "André König",
     "email": "andre.koenig@posteo.de"
