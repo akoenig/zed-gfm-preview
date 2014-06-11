@@ -1,15 +1,15 @@
 {
-    "name": "zed-gfm-preview",
-    "uri": "gh:akoenig/zed-gfm-preview",
-    "version": "1.1.0",
-    "author": {
-        "name": "André König",
-        "email": "andre.koenig@posteo.de"
-    },
-    "description": "GitHub Markdown Preview for Zed",
-    "files": [
-        "index.js",
-        "lib/template.js",
-        "lib/github.js"
-    ]
+  "name": "zed-gfm-preview",
+  "uri": "gh:akoenig/zed-gfm-preview",
+  "version": [],
+  "author": {
+    "name": "André König",
+    "email": "andre.koenig@posteo.de"
+  },
+  "description": "GitHub Markdown Preview for Zed",
+  "files": [
+    "index.js",
+    "lib/template.js",
+    "lib/github.js"
+  ]
 }
