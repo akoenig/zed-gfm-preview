@@ -1,6 +1,6 @@
 # GitHub Markdown preview for [Zed](http://zedapp.org/)
 
-**Note:** This package is using a _bleeding edge_ API of Zed which is currently only available in the master branch.
+**Note:** This package is using a _bleeding edge_ API of [Zed](http://zedapp.org/) which is currently only available in the master branch.
 
 ## Installation
 
@@ -8,7 +8,7 @@ Install the package via [ZPM](http://zedapp.org/2014/05/zed-package-manager/).
 
     gh:akoenig/zed-gfm-preview
 
-If you want to use this as your default markdown preview, change the markdown handler in your `user.json`:
+If you want to use the package as your default markdown preview, change the markdown handler in your `user.json`:
 
     modes: {
         markdown: {
@@ -33,11 +33,18 @@ You can also trigger the rendering manually:
 2. Open the preview split (Cmd+P or Ctrl+P)
 3. Hit Cmd+. or Ctrl+. and select `GitHub:Markdown:Preview`
 
-## Changelog
+## GitHub API
 
-### Version 1.0.0 (20140521)
+If you're riding with the default configuration, you're allowed to preview your markdown file 60 times per hour. Not too much, right? With a private OAuth token you can level this limit up to 5.000 renderings per hour.
 
-- Initial Release. Core functionality.
+Go to your [settings page](https://github.com/settings/tokens/new) and create a new token. Open your [Zed](http://zedapp.org/) configuration project and add this token to your preferences section like:
+
+    "preferences": {
+        "githubToken": "YOUR_TOKEN",
+        ...
+    }
+
+You will receive a warning message if you have only 10 renderings left :)
 
 ## Author
 
