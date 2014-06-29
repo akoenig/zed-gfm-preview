@@ -1,7 +1,5 @@
 # GitHub Markdown preview for [Zed](http://zedapp.org/)
 
-**Note:** This package is using a _bleeding edge_ API of [Zed](http://zedapp.org/) which is currently only available in the master branch.
-
 ## Installation
 
 Install the package via [ZPM](http://zedapp.org/2014/05/zed-package-manager/).
